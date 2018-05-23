@@ -44,4 +44,4 @@ http://localhost:8080/catalogService/products/add
   "currencyCode": "USD"
 }
 ```
- 
+ # springbootwithdynamodb
