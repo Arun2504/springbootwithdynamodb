@@ -16,9 +16,9 @@ import com.softvision.springboot.dynamodb.entity.ProductCatalog;
 import com.softvision.springboot.dynamodb.service.ProductCatalogService;
 
 
-// TODO: Auto-generated Javadoc
 /**
- * The Class ProductCatalogController.
+ * @author arun.p
+ *
  */
 @RestController
 public class ProductCatalogController {

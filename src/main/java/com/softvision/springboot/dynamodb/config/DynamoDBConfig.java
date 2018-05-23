@@ -10,19 +10,33 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class DynamoDBConfig.
+ *
+ * @author arun.p
+ */
 @Configuration
 @EnableDynamoDBRepositories(basePackages = "com.example.crudspringbootdynamodb.dao")
 public class DynamoDBConfig {
 	
+	/** The dynamo DB end point. */
 	@Value("${amazon.dynamodb.endpoint}")
 	private String dynamoDBEndPoint;
 	
+	/** The access key. */
 	@Value("${amazon.aws.accesskey}")
 	private String accessKey;
 	
+	/** The secret key. */
 	@Value("${amazon.aws.secretkey}")
 	private String secretKey;
 	
+	/**
+	 * Amazon dynamo DB.
+	 *
+	 * @return the amazon dynamo DB
+	 */
 	@Bean
 	public AmazonDynamoDB amazonDynamoDB() {
 		AmazonDynamoDB amazonDynamoDB = new AmazonDynamoDBClient(new BasicAWSCredentials(accessKey, secretKey));

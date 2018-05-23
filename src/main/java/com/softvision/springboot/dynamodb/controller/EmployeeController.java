@@ -16,7 +16,8 @@ import com.softvision.springboot.dynamodb.entity.Employee;
 import com.softvision.springboot.dynamodb.service.EmployeeService;
 
 /**
- * The Class EmployeeController.
+ * @author arun.p
+ *
  */
 @RestController
 public class EmployeeController {
