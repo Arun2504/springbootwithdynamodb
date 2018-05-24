@@ -17,7 +17,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
  * @author arun.p
  */
 @Configuration
-@EnableDynamoDBRepositories(basePackages = "com.example.crudspringbootdynamodb.dao")
+@EnableDynamoDBRepositories(basePackages = "com.softvision.springboot.dynamodb.dao")
 public class DynamoDBConfig {
 	
 	/** The dynamo DB end point. */
