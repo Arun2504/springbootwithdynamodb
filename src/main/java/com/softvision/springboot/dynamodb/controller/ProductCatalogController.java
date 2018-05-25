@@ -47,8 +47,8 @@ public class ProductCatalogController {
 	 * @return the product catalog
 	 */
 	@RequestMapping(path = ServiceConstants.BACK_SLASH + ServiceConstants.PRODUCTS + ServiceConstants.BACK_SLASH
-			+ ServiceConstants.OPENING_CURLEY_BRACKET + ServiceConstants.ID
-			+ ServiceConstants.CLOSING_CURLEY_BRACKET, method = RequestMethod.GET)
+			+ ServiceConstants.OPENING_CURLY_BRACKET + ServiceConstants.ID
+			+ ServiceConstants.CLOSING_CURLY_BRACKET, method = RequestMethod.GET)
 	public @ResponseBody ProductCatalog findById(@PathVariable String id) {
 		return productCatelogService.findProductById(id);
 	}
@@ -60,8 +60,8 @@ public class ProductCatalogController {
 	 *            the id
 	 */
 	@RequestMapping(path = ServiceConstants.BACK_SLASH + ServiceConstants.PRODUCTS + ServiceConstants.BACK_SLASH
-			+ ServiceConstants.DELETE + ServiceConstants.BACK_SLASH + ServiceConstants.OPENING_CURLEY_BRACKET
-			+ ServiceConstants.ID + ServiceConstants.CLOSING_CURLEY_BRACKET, method = RequestMethod.DELETE)
+			+ ServiceConstants.DELETE + ServiceConstants.BACK_SLASH + ServiceConstants.OPENING_CURLY_BRACKET
+			+ ServiceConstants.ID + ServiceConstants.CLOSING_CURLY_BRACKET, method = RequestMethod.DELETE)
 	public void deleteById(@PathVariable String id) {
 		productCatelogService.deleteProductById(id);
 	}
@@ -90,8 +90,8 @@ public class ProductCatalogController {
 	 * @return the response entity
 	 */
 	@RequestMapping(path =  ServiceConstants.BACK_SLASH + ServiceConstants.PRODUCTS + ServiceConstants.BACK_SLASH
-			+ ServiceConstants.UPDATE + ServiceConstants.BACK_SLASH + ServiceConstants.OPENING_CURLEY_BRACKET
-			+ ServiceConstants.ID + ServiceConstants.CLOSING_CURLEY_BRACKET, method = RequestMethod.PUT, headers = ServiceConstants.ACCEPT_APPLICATION_JSON)
+			+ ServiceConstants.UPDATE + ServiceConstants.BACK_SLASH + ServiceConstants.OPENING_CURLY_BRACKET
+			+ ServiceConstants.ID + ServiceConstants.CLOSING_CURLY_BRACKET, method = RequestMethod.PUT, headers = ServiceConstants.ACCEPT_APPLICATION_JSON)
 	public ResponseEntity<ProductCatalog> updateCatalogEntry(@PathVariable String id,
 			@RequestBody ProductCatalog product) {
 

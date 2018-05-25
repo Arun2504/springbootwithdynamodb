@@ -46,8 +46,8 @@ public class EmployeeController {
 	 * @return the product catalog
 	 */
 	@RequestMapping(path = ServiceConstants.BACK_SLASH + ServiceConstants.EMPLOYEE + ServiceConstants.BACK_SLASH
-			+ ServiceConstants.OPENING_CURLEY_BRACKET + ServiceConstants.ID
-			+ ServiceConstants.CLOSING_CURLEY_BRACKET, method = RequestMethod.GET)
+			+ ServiceConstants.OPENING_CURLY_BRACKET + ServiceConstants.ID
+			+ ServiceConstants.CLOSING_CURLY_BRACKET, method = RequestMethod.GET)
 	public @ResponseBody Employee findById(@PathVariable String id) {
 		return employeeService.findEmployeeById(id);
 	}
@@ -59,8 +59,8 @@ public class EmployeeController {
 	 *            the id
 	 */
 	@RequestMapping(path = ServiceConstants.BACK_SLASH + ServiceConstants.EMPLOYEE + ServiceConstants.BACK_SLASH
-			+ ServiceConstants.DELETE + ServiceConstants.BACK_SLASH + ServiceConstants.OPENING_CURLEY_BRACKET
-			+ ServiceConstants.ID + ServiceConstants.CLOSING_CURLEY_BRACKET, method = RequestMethod.DELETE)
+			+ ServiceConstants.DELETE + ServiceConstants.BACK_SLASH + ServiceConstants.OPENING_CURLY_BRACKET
+			+ ServiceConstants.ID + ServiceConstants.CLOSING_CURLY_BRACKET, method = RequestMethod.DELETE)
 	public void deleteById(@PathVariable String id) {
 		employeeService.deleteEmployeeById(id);
 	}
@@ -88,9 +88,9 @@ public class EmployeeController {
 	 * @return the response entity
 	 */
 	@RequestMapping(path = ServiceConstants.BACK_SLASH + ServiceConstants.EMPLOYEE + ServiceConstants.BACK_SLASH
-			+ ServiceConstants.UPDATE + ServiceConstants.BACK_SLASH + ServiceConstants.OPENING_CURLEY_BRACKET
+			+ ServiceConstants.UPDATE + ServiceConstants.BACK_SLASH + ServiceConstants.OPENING_CURLY_BRACKET
 			+ ServiceConstants.ID
-			+ ServiceConstants.CLOSING_CURLEY_BRACKET, method = RequestMethod.PUT, headers = ServiceConstants.ACCEPT_APPLICATION_JSON)
+			+ ServiceConstants.CLOSING_CURLY_BRACKET, method = RequestMethod.PUT, headers = ServiceConstants.ACCEPT_APPLICATION_JSON)
 	public ResponseEntity<Employee> updateEmployee(@PathVariable String id, @RequestBody Employee employee) {
 
 		Employee newEmployee = employeeService.updateEmployee(employee, id);

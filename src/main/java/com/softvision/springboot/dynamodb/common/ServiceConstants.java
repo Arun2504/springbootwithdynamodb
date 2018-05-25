@@ -36,10 +36,10 @@ public class ServiceConstants {
 	public static final String ID = "id";
 	
 	/** The Constant OPENING_CURLEY_BRACKET. */
-	public static final String OPENING_CURLEY_BRACKET = "{";
+	public static final String OPENING_CURLY_BRACKET = "{";
 	
 	/** The Constant CLOSING_CURLEY_BRACKET. */
-	public static final String CLOSING_CURLEY_BRACKET = "}";
+	public static final String CLOSING_CURLY_BRACKET = "}";
 	
 	/** The Constant ACCEPT_APPLICATION_JSON. */
 	public static final String ACCEPT_APPLICATION_JSON = "Accept=application/json";
