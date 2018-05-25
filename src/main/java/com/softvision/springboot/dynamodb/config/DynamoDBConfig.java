@@ -10,7 +10,6 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class DynamoDBConfig.
  *

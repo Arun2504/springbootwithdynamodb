@@ -9,7 +9,6 @@ import com.softvision.springboot.dynamodb.dao.ProductCatalogDAO;
 import com.softvision.springboot.dynamodb.entity.ProductCatalog;
 import com.softvision.springboot.dynamodb.service.ProductCatalogService;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class ProductCatalogServiceImpl.
  *

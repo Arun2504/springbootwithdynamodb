@@ -6,11 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.softvision.springboot.dynamodb.dao.EmployeeDAO;
-import com.softvision.springboot.dynamodb.dao.ProductCatalogDAO;
 import com.softvision.springboot.dynamodb.entity.Employee;
-import com.softvision.springboot.dynamodb.entity.ProductCatalog;
 import com.softvision.springboot.dynamodb.service.EmployeeService;
-import com.softvision.springboot.dynamodb.service.ProductCatalogService;
 
 // TODO: Auto-generated Javadoc
 /**

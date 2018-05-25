@@ -12,15 +12,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.softvision.springboot.dynamodb.common.ServiceConstants;
 import com.softvision.springboot.dynamodb.entity.ProductCatalog;
 import com.softvision.springboot.dynamodb.service.ProductCatalogService;
-
 
 /**
  * @author arun.p
  *
  */
 @RestController
+@RequestMapping(path = ServiceConstants.BACK_SLASH + ServiceConstants.CATALOG_SERVICE)
 public class ProductCatalogController {
 
 	/** The product catelog service. */
@@ -32,20 +33,22 @@ public class ProductCatalogController {
 	 *
 	 * @return the list
 	 */
-	@RequestMapping(path="/catalogService/products", method=RequestMethod.GET)
+	@RequestMapping(path = ServiceConstants.BACK_SLASH + ServiceConstants.PRODUCTS, method = RequestMethod.GET)
 	public @ResponseBody List<ProductCatalog> findAll() {
-		
-		
+
 		return productCatelogService.findAllProducts();
 	}
-	
+
 	/**
 	 * Find by id.
 	 *
-	 * @param id the id
+	 * @param id
+	 *            the id
 	 * @return the product catalog
 	 */
-	@RequestMapping(path="/catalogService/products/{id}", method=RequestMethod.GET)
+	@RequestMapping(path = ServiceConstants.BACK_SLASH + ServiceConstants.PRODUCTS + ServiceConstants.BACK_SLASH
+			+ ServiceConstants.OPENING_CURLEY_BRACKET + ServiceConstants.ID
+			+ ServiceConstants.CLOSING_CURLEY_BRACKET, method = RequestMethod.GET)
 	public @ResponseBody ProductCatalog findById(@PathVariable String id) {
 		return productCatelogService.findProductById(id);
 	}
@@ -53,36 +56,47 @@ public class ProductCatalogController {
 	/**
 	 * Delete by id.
 	 *
-	 * @param id the id
+	 * @param id
+	 *            the id
 	 */
-	@RequestMapping(path="/catalogService/products/delete/{id}", method=RequestMethod.DELETE)
+	@RequestMapping(path = ServiceConstants.BACK_SLASH + ServiceConstants.PRODUCTS + ServiceConstants.BACK_SLASH
+			+ ServiceConstants.DELETE + ServiceConstants.BACK_SLASH + ServiceConstants.OPENING_CURLEY_BRACKET
+			+ ServiceConstants.ID + ServiceConstants.CLOSING_CURLEY_BRACKET, method = RequestMethod.DELETE)
 	public void deleteById(@PathVariable String id) {
-		 productCatelogService.deleteProductById(id);
+		productCatelogService.deleteProductById(id);
 	}
 
 	/**
 	 * Adds the catalog entry.
 	 *
-	 * @param products the products
+	 * @param products
+	 *            the products
 	 * @return the response entity
 	 */
-	@RequestMapping(path="/catalogService/products/add", method=RequestMethod.POST, headers="Accept=application/json")
+	@RequestMapping(path = ServiceConstants.BACK_SLASH + ServiceConstants.PRODUCTS + ServiceConstants.BACK_SLASH
+			+ ServiceConstants.ADD, method = RequestMethod.POST, headers = ServiceConstants.ACCEPT_APPLICATION_JSON)
 	public ResponseEntity<List<ProductCatalog>> addCatalogEntry(@RequestBody List<ProductCatalog> products) {
-		return new ResponseEntity<List<ProductCatalog>> (productCatelogService.saveNewProduct(products),HttpStatus.CREATED);
+		return new ResponseEntity<List<ProductCatalog>>(productCatelogService.saveNewProduct(products),
+				HttpStatus.CREATED);
 	}
-	
+
 	/**
 	 * Update catalog entry.
 	 *
-	 * @param id the id
-	 * @param product the product
+	 * @param id
+	 *            the id
+	 * @param product
+	 *            the product
 	 * @return the response entity
 	 */
-	@RequestMapping(path="/catalogService/products/update/{id}", method=RequestMethod.PUT, headers="Accept=application/json")
-	public ResponseEntity<ProductCatalog> updateCatalogEntry(@PathVariable String id, @RequestBody ProductCatalog product) {
-		
-		ProductCatalog newProduct = productCatelogService.updateProduct(product,id);
-		if(null == newProduct) {
+	@RequestMapping(path =  ServiceConstants.BACK_SLASH + ServiceConstants.PRODUCTS + ServiceConstants.BACK_SLASH
+			+ ServiceConstants.UPDATE + ServiceConstants.BACK_SLASH + ServiceConstants.OPENING_CURLEY_BRACKET
+			+ ServiceConstants.ID + ServiceConstants.CLOSING_CURLEY_BRACKET, method = RequestMethod.PUT, headers = ServiceConstants.ACCEPT_APPLICATION_JSON)
+	public ResponseEntity<ProductCatalog> updateCatalogEntry(@PathVariable String id,
+			@RequestBody ProductCatalog product) {
+
+		ProductCatalog newProduct = productCatelogService.updateProduct(product, id);
+		if (null == newProduct) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 
