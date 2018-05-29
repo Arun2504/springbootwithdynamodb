@@ -1,0 +1,43 @@
+plugins {
+    id "org.springframework.boot" version "2.0.2.RELEASE"
+}
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+
+//apply plugin: 'io.spring.dependency-management'
+
+group = 'com.softvision'
+version = '0.0.1-SNAPSHOT'
+
+description = """crud-springboot-dynamodb"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+tasks.withType(JavaCompile) {
+	options.encoding = 'UTF-8'
+}
+
+
+
+repositories {
+
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version:'1.5.6.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-rest', version:'1.5.6.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'1.5.6.RELEASE'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version:'1.11.172'
+    compile group: 'com.github.derjust', name: 'spring-data-dynamodb', version:'4.5.0'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+   //classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.2.RELEASE"
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.5.6.RELEASE') {
+exclude(module: 'commons-logging')
+    }
+}
