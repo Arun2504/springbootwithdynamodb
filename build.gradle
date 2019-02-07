@@ -7,7 +7,7 @@ apply plugin: 'idea'
 
 //apply plugin: 'io.spring.dependency-management'
 
-group = 'com.softvision'
+group = 'com.dynamdb'
 version = '0.0.1-SNAPSHOT'
 
 description = """crud-springboot-dynamodb"""
